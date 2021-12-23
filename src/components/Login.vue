@@ -1,7 +1,7 @@
 <template>
   <div>
     <form @submit.prevent="handleSubmit">
-      <h1>Sign up</h1>
+      <h1>Login</h1>
       <br />
 
       <label for="email">Email:</label>
@@ -10,7 +10,7 @@
         name="email"
         v-model="email"
         required
-        class="bg-green-300 m-2 p-2 rounded-lg"
+        class="bg-yellow-100 m-2 p-2 rounded-sm"
       />
 
       <label for="password">Password:</label>
@@ -19,10 +19,10 @@
         name="password"
         v-model="password"
         required
-        class="bg-green-300 m-2 p-2 rounded-lg"
+        class="bg-yellow-100 m-2 p-2 rounded-sm"
       />
 
-      <button class="bg-gray-400 m-8 p-2 rounded-lg">Sign up</button>
+      <button class="bg-blue-400 m-8 p-2 rounded-sm">Sign up</button>
 
       <div v-if="error">{{ error }}</div>
     </form>
@@ -32,19 +32,19 @@
 <script>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import useSignup from "../composables/useSignup";
+import useLogin from "../composables/useLogin";
 
 export default {
   setup() {
     const email = ref("");
     const password = ref("");
 
-    const { signup, error } = useSignup();
+    const { login, error } = useLogin();
     const router = useRouter();
 
     const handleSubmit = async () => {
-      console.log(email.value, password.value);
-      await signup(email.value, password.value);
+      console.log('Login function: ', email.value, password.value);
+      await login(email.value, password.value);
 
       if (!error.value) {
         router.push("/authenticated");

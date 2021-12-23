@@ -1,3 +1,5 @@
+// TODO: move to test page
+
 <template>
   <div class="">
     <div class="bg-yellow-500 ml-5 mt-5 mr-5 px-2 py-2 rounded-lg">
@@ -55,8 +57,16 @@
         <div>
           <SignUp />
         </div>
+
+        
       </div>
+
+      
     </div>
+
+    <div class="bg-gray-200 p-2">
+          <Login />
+        </div>
   </div>
 </template>
 
@@ -65,6 +75,7 @@
 import { ref } from "@vue/reactivity";
 import getCollection from "@/composables/getCollection";
 import SignUp from "@/components/Signup.vue";
+import Login from "@/components/Login.vue";
 
 // Firebase imports
 import { db } from "../firebase/config";
@@ -78,7 +89,7 @@ import {
 
 export default {
   name: "Home",
-  components: { SignUp },
+  components: { SignUp, Login },
   setup() {
     // Getting collections to display
     const { documents: books } = getCollection("books");
