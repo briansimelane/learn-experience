@@ -1,6 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
+
+// Layouts
+import Landing from '../layouts/Landing.vue'
+import LoggedIn from '../layouts/LoggedIn.vue'
+import Simulation from '../layouts/Simulation.vue'
+
+// Pages views
 import Home from '../views/Home.vue'
+import Login from '../views/Login.vue'
+import Register from '../views/Register.vue'
+import Player from '../views/Player.vue'
+import Facilitator from '../views/Facilitator.vue'
+import Administrator from "../views/Administrator.vue"
 import Authenticated from '../views/Authenticated.vue'
+import Test from '../views/Test.vue'
+
+
 
 // firebase imports
 import { auth } from '../firebase/config'
@@ -18,16 +33,74 @@ const requireAuth = (to, from, next) => {
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: '/test',
+    name: 'Test',
+    component: Test
   },
   {
+    path: '/',
+    name: 'Landing',
+    component: Landing,
+    children: [
+        {
+        path: '',
+        name: 'Home',
+        component: Home
+      },
+      {
+        path: '/login',
+        name: 'Login',
+        component: Login
+      },
+      {
+        path: '/register',
+        name: 'Register',
+        component: Register
+      }
+    ] 
+  },
+  {
+    path: '/loggedin',
+    name: 'LoggedIn',
+    component: LoggedIn,
+    children: [
+        {
+        path: '',
+        name: 'Player',
+        component: Player
+      },
+      {
+        path: '/facilitator',
+        name: 'Facilitator',
+        component: Facilitator
+      },
+      {
+        path: '/administrator',
+        name: 'Administrator',
+        component: Administrator
+      }
+    ] 
+  },
+  {
+    path: '/simulation',
+    name: 'Simulation',
+    component: Simulation,
+    children: [
+      {
+        path: '',
+        name: 'Authenticated',
+        component: Authenticated
+      }
+      
+    ]
+  },
+
+  /*{
     path: '/authenticated',
     name: 'Authenticated',
     component: Authenticated,
     beforeEnter: requireAuth
-  }
+  } */
 ]
 
 const router = createRouter({

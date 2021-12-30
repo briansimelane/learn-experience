@@ -22,7 +22,7 @@
         class="bg-yellow-100 m-2 p-2 rounded-sm"
       />
 
-      <button class="bg-blue-400 m-8 p-2 rounded-sm">Sign up</button>
+      <button class="bg-blue-400 m-8 p-2 rounded-sm">Login</button>
 
       <div v-if="error">{{ error }}</div>
     </form>
