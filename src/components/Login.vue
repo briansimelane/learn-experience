@@ -33,6 +33,8 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import useLogin from "../composables/useLogin";
+import { db } from "../firebase/config"
+
 
 export default {
   setup() {
@@ -45,6 +47,8 @@ export default {
     const handleSubmit = async () => {
       console.log('Login function: ', email.value, password.value);
       await login(email.value, password.value);
+
+      
 
       if (!error.value) {
         router.push("/authenticated");

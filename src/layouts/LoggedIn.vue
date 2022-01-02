@@ -1,6 +1,5 @@
 <template>
   <div>
-      Logged in pages
       <router-view></router-view>
   </div>
 </template>

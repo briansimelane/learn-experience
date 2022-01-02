@@ -13,7 +13,10 @@ import Player from '../views/Player.vue'
 import Facilitator from '../views/Facilitator.vue'
 import Administrator from "../views/Administrator.vue"
 import Authenticated from '../views/Authenticated.vue'
+
+// Test vies
 import Test from '../views/Test.vue'
+import Test2 from '../views/Test2.vue'
 
 
 
@@ -36,6 +39,11 @@ const routes = [
     path: '/test',
     name: 'Test',
     component: Test
+  },
+  {
+    path: '/test2',
+    name: 'Test2',
+    component: Test2
   },
   {
     path: '/',
@@ -63,6 +71,7 @@ const routes = [
     path: '/loggedin',
     name: 'LoggedIn',
     component: LoggedIn,
+    beforeEnter: requireAuth,
     children: [
         {
         path: '',
@@ -85,6 +94,7 @@ const routes = [
     path: '/simulation',
     name: 'Simulation',
     component: Simulation,
+    beforeEnter: requireAuth,
     children: [
       {
         path: '',

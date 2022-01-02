@@ -1,6 +1,6 @@
 <template>
   <div>
-      Simulation pages
+      
       <router-view></router-view>
   </div>
 </template>

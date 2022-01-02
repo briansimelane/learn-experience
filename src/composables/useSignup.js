@@ -2,12 +2,14 @@ import { ref } from 'vue'
 
 //firebase imports
 import { auth } from '../firebase/config'
-import { createUserWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { db } from "@/firebase/config";
+import { doc, setDoc } from "firebase/firestore";
 
 const error = ref(null)
 const isPending = ref(false)
 
-const signup = async (email, password) => {
+const signup = async (email, password, displayName) => {
     error.value = null
     isPending.value = true
 
@@ -17,6 +19,20 @@ const signup = async (email, password) => {
             throw new Error('Could not complete signup')
         }
 
+        // update displayName and add user to user collection
+        updateProfile(auth.currentUser, {
+        displayName: displayName /*, photoURL: "https://example.com/jane-q-user/profile.jpg" */    
+        })
+
+      setDoc(doc(db, 'users', auth.currentUser.uid), {
+            name: displayName,
+            email: email,
+            facilitator: false,
+            administrator: false,
+            lastSignIn: auth.currentUser.metadata.lastSignInTime
+            })
+
+        //reset error and pending
         error.value = null
         isPending.value = false
     }

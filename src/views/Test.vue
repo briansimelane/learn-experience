@@ -73,7 +73,7 @@
 <script>
 // @ is an alias to /src
 import { ref } from "@vue/reactivity";
-import getCollection from "@/composables/getCollection";
+import getCollection from "@/composables/getCollection"
 import getUser from '@/composables/getUser'
 import SignUp from "@/components/Signup.vue";
 import Login from "@/components/Login.vue";
