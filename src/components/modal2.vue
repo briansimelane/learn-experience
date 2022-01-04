@@ -20,9 +20,9 @@
                   </p>
               </div>
               <!-- footer -->
-              <div class="p-6 flex justify-end items-center">
-                  <button class="bg-gray-300 p-3 rounded-lg" @click="close">Cancel</button>
-                  <button class="bg-red-600 p-3 ml-3 rounded-lg" @click="deleteSim">Delete</button>
+              <div class="p-6 flex justify-center items-center">
+                  <button class="bg-green-600 p-3 rounded-lg" @click="close">Close</button>
+                  
               </div>
           </div>
       </div>
@@ -43,12 +43,8 @@ export default {
             emit("close")
         }
 
-        const deleteSim = () => {
-            emit("deleteSim")
-        }
 
-
-    return { close, deleteSim }
+    return { close }
 
     }
 

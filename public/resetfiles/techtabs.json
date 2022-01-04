@@ -1,0 +1,8 @@
+{
+    "baseData": {
+        "simName": "TechTabs Limited",
+        "maxTeams": 10,
+        "maxRounds": 5
+    }
+    
+}

@@ -9,6 +9,7 @@
 
   <router-view/>
 
+
   
 </template>
 
@@ -16,7 +17,10 @@
 
 import getUser from '../src/composables/getUser'
 import { useRouter } from "vue-router";
-import { watchEffect } from 'vue'
+import { ref, watchEffect } from 'vue'
+
+
+
 
 //firebase imports
 import { auth } from '../src/firebase/config'
@@ -29,6 +33,7 @@ export default {
    const router = useRouter();
 
    const { user } = getUser()
+   
 
    const handleLogout = () => {
      signOut(auth)

@@ -18,7 +18,7 @@
             </div>
             <div class="hidden md:block">
               <div class="ml-10 flex items-baseline space-x-4">
-                <a v-for="item in navigation" :key="item.name" :href="item.href" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</a>
+                <router-link v-for="item in navigation" :key="item.name" :to="item.to" :class="[item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white', 'px-3 py-2 rounded-md text-sm font-medium']" :aria-current="item.current ? 'page' : undefined">{{ item.name }}</router-link>
               </div>
             </div>
           </div>
@@ -34,9 +34,10 @@
               <Menu as="div" class="ml-3 relative">
         
                 <div>
-                  <MenuButton class="max-w-xs bg-gray-800 rounded-full flex items-center text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
+                  <MenuButton class=" bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt="" />
+                    <!--<img class="h-8 w-8 rounded-full" :src="user.imageUrl" alt="" /> -->
+                    <CogIcon class="h-6 w-6" aria-hidden="true" />
                   </MenuButton>
                 </div>
                 <transition enter-active-class="transition ease-out duration-100" enter-from-class="transform opacity-0 scale-95" enter-to-class="transform opacity-100 scale-100" leave-active-class="transition ease-in duration-75" leave-from-class="transform opacity-100 scale-100" leave-to-class="transform opacity-0 scale-95">
@@ -68,7 +69,8 @@
         <div class="pt-4 pb-3 border-t border-gray-700">
           <div class="flex items-center px-5">
             <div class="flex-shrink-0">
-              <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt="" />
+              <!-- <img class="h-10 w-10 rounded-full" :src="user.imageUrl" alt="" /> -->
+              <UserCircleIcon class="block h-10 w-10 text-gray-400" aria-hidden="true" />
             </div>
             <div class="ml-3">
               <div class="text-base font-medium leading-none text-white">{{ user.displayName }}</div>
@@ -95,7 +97,7 @@
 
 <script>
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/vue'
-import { BellIcon, MenuIcon, XIcon } from '@heroicons/vue/outline'
+import { BellIcon, MenuIcon, XIcon, CogIcon, UserCircleIcon } from '@heroicons/vue/outline'
 import getUser from '@/composables/getUser'
 import { useRouter } from "vue-router";
 
@@ -107,11 +109,10 @@ import {signOut } from 'firebase/auth'
     const { user } = getUser()
 
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
-  { name: 'Reports', href: '#', current: false },
+  { name: 'Home', to: '/', current: true },
+  { name: 'Players', to: '/loggedin', current: false },
+  { name: 'Facilitators', to: '/facilitator', current: false },
+  { name: 'Administrators', to: '/administrator', current: false },
 ]
 
 
@@ -125,6 +126,8 @@ export default {
     MenuItem,
     MenuItems,
     BellIcon,
+    CogIcon,
+    UserCircleIcon,
     MenuIcon,
     XIcon,
   },

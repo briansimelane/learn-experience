@@ -10,6 +10,7 @@ const getCollection = (c, q) => {
     // collection reference
     let colRef = collection(db, c)
 
+    // if we do pass in a query then it will update the colRef
     if(q){
         colRef = query(colRef, where(...q))
     }

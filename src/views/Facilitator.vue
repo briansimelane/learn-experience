@@ -1,8 +1,30 @@
 
 <template>
-<Modal :modalActive="modalActive" @close="toggleModal">
-  <h1>Are you sure you want to delete the simulation /game?</h1>
+<Modal :modalActive="modalActive" @close="toggleModal(simulation)" @deleteSim="deleteSim(simulation)">
+  <template v-slot:header>
+    <div>
+      Delete simulation?
+    </div>
+  </template>
+  <template v-slot:content>
+    <div>
+      This will delete the simulation. 
+    </div>
+  </template>
 </Modal>
+
+<Modal2 :modalActive="modalActive2" @close="toggleModal2">
+  <template v-slot:header>
+    <div>
+      {{ confirmationModalHeader }}
+    </div>
+  </template>
+  <template v-slot:content>
+    <div>
+      {{ confirmationModalBody }} 
+    </div>
+  </template>
+</Modal2>
 
 <PlayerNav />
 
@@ -93,7 +115,7 @@
 
 <!-- Table to display simulations -->
 <div class="flex flex-col mt-5">
-  <h2 class=" text-2xl text-gray-900 mb-2">
+  <h2 class=" text-2xl text-gray-900 mb-2 ml-5">
           Your created simulations and games
         </h2>
     <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -139,7 +161,7 @@
                 </td>
                 
                 <td class="px-6 py-4 whitespace-nowrap">
-                  <div class="text-sm text-gray-900">{{ simulation.dateCreated }}</div>
+                  <div class="text-sm text-gray-900">{{ simulation.id }}</div>
                   
                 </td>
 
@@ -151,7 +173,7 @@
                 <td class="px-6 py-4 whitespace-nowrap" v-if="simulation.facilitatorID === user.uid">
                   <div ><span class="text-white bg-green-600 hover:bg-gray-500  rounded-md py-2 px-3 cursor-pointer"  >Manage</span>
 
-                  <span class="text-white bg-red-600 hover:bg-gray-500  rounded-md md:ml-3 py-2 px-3 cursor-pointer"  @click="toggleModal">Delete</span>
+                  <span class="text-white bg-red-600 hover:bg-gray-500  rounded-md ml-2 md:ml-3 py-2 px-3 cursor-pointer"  @click="toggleModal(simulation)">Delete</span>
                   </div>
                 </td>
 
@@ -177,14 +199,16 @@
 import getCollection from "@/composables/getCollection"
 import getUser from '@/composables/getUser'
 
+
 // Compoment imports
 import PlayerNav from '@/components/navBars/PlayerNav'
 import { ref } from 'vue'
 import Modal from '@/components/modal.vue'
+import Modal2 from '@/components/modal2.vue'
 
 // firebase imports
 import { db } from "../firebase/config"
-import { addDoc, collection } from "firebase/firestore"
+import { addDoc, collection, doc, deleteDoc } from "firebase/firestore"
 
 
 // tailwind imports
@@ -201,22 +225,62 @@ export default {
     ListboxOptions,
     CheckIcon,
     SelectorIcon,
-    Modal
+    Modal, Modal2
   },
   setup() {
   const { user } = getUser()
   
   const { documents: simulations } = getCollection("simulations")
 
+  /* Modal Logic and constants START */
+
+  const currentSimulationSelected = ref('')
+  const confirmationModalHeader = ref('')
+  const confirmationModalBody = ref('')
+
   const modalActive = ref(false)
   // function to toggle modal
-  const toggleModal = () => {
+  const toggleModal = (simulation) => {
     modalActive.value = !modalActive.value
+    if(modalActive.value) {
+      currentSimulationSelected.value = simulation.id
+    }
+    console.log("Toggle modal payload: ", simulation)
   }
+
+  //function to delete the selected simulation
+  const deleteSim = () => {
+
+    console.log("Delete sim exexuted. Payload: ", currentSimulationSelected.value )
+      const docRef = doc(db, "simulations", currentSimulationSelected.value);
+      deleteDoc(docRef) 
+
+      modalActive.value = !modalActive.value
+
+      //updated and open confirmation modal
+      confirmationModalHeader.value = "Deletion confirmation"
+      confirmationModalBody.value = "Your selected simulation has been deleted"
+
+      modalActive2.value = !modalActive2.value
+      
+
+  }
+
+  const modalActive2 = ref(false)
+  // function to toggle modal
+  const toggleModal2 = () => {
+    modalActive2.value = !modalActive2.value
+  }
+
+ /* Modal Logic and constants END */
 
   const clientName = ref('')
   const cohortName = ref('')
   let dateCreated = new Date().toLocaleString() 
+  const url = '/resetfiles/techtabs.json'
+  const currentSimData = ref('')
+ 
+
 
 
   const teams = [
@@ -264,26 +328,43 @@ const numTeams = ref(teams[0])
  const createSimulation = async () => {
    const colRef = collection(db, "simulations");
 
+  // fetch JSON file for the simulation to be used in passing to db
+    const res = await fetch(url)
+    const data = await res.json()
+    // Assign JSON game file to variables
+    currentSimData.value = data.baseData
+    
+
+  // write to firestore
    await addDoc(colRef, {
      facilitatorID: user.value.uid,
      facilitatorName: user.value.displayName,
      client: clientName.value,
      cohortName: cohortName.value,
      dateCreated: dateCreated,
-     numTeams: numTeams.value.name
+     numTeams: numTeams.value.name,
+     simName: currentSimData.value.simName
    })
+
+
+//updated and open confirmation modal
+confirmationModalHeader.value = "Simulation created"
+confirmationModalBody.value = cohortName.value + " simulation has been created"
+
+modalActive2.value = !modalActive2.value
 
    // reset values
    clientName.value = ''
    cohortName.value = ''
    numTeams.value = teams[0]
 
-  alert('Simulation created')
+
     console.log("Create simulation triggered")
   }
 
     return {
-      user, simulations, createSimulation, clientName, cohortName, teams, numTeams, modalActive, toggleModal
+      user, simulations, createSimulation, clientName, cohortName, teams, numTeams, modalActive, toggleModal,
+      modalActive2, toggleModal2, deleteSim, confirmationModalHeader, confirmationModalBody
     }
   },
 }

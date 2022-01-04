@@ -7,7 +7,7 @@
           <polygon points="50,0 100,0 50,100 0,100" />
         </svg>
 
-        <Popover>
+      <Popover>
           <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
             <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
               <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
@@ -25,11 +25,11 @@
                 </div>
               </div>
               <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-6">
-                <router-link v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium text-gray-500 hover:text-gray-900">{{ item.name }}</router-link>
-                <router-link to="/login" class="font-medium text-green-600 hover:text-green-500">Log in</router-link>
-              </div>
+                <router-link v-show="user" v-for="item in navigation" :key="item.name" :to="item.href" class="font-medium text-gray-500 hover:text-gray-900">{{ item.name }}</router-link>
+               <!-- <router-link to="/login" class="font-medium text-green-600 hover:text-green-500">Log in</router-link> -->
+             </div>
             </nav>
-          </div>
+          </div> 
 
 
 <!-- mobile pop out navigation -->
@@ -55,8 +55,8 @@
                 </router-link>
               </div>
             </PopoverPanel>
-          </transition>
-        </Popover>
+          </transition> 
+       </Popover> 
 
         <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
           <div class="sm:text-center lg:text-left">
@@ -93,6 +93,7 @@
 <script>
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { MenuIcon, XIcon } from '@heroicons/vue/outline'
+import getUser from '@/composables/getUser'
 
 const navigation = [
   { name: 'Players', href: '/loggedin' },
@@ -110,8 +111,10 @@ export default {
     XIcon,
   },
   setup() {
+const { user } = getUser()
+
     return {
-      navigation,
+      navigation,  user
     }
   },
 }

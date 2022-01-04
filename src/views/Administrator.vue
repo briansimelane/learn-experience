@@ -3,6 +3,8 @@
 
 <PlayerNav />
 
+
+
   <div class="min-h-full">
     
     <header class="bg-white shadow">
@@ -134,6 +136,7 @@ import getUser from '@/composables/getUser'
 // Compoment imports
 import PlayerNav from '@/components/navBars/PlayerNav'
 
+
 // firebase imports
 import { db } from "../firebase/config"
 import { doc, updateDoc } from "firebase/firestore"
@@ -150,6 +153,8 @@ export default {
   const { user } = getUser()
   
   const { documents: people } = getCollection("users");
+
+ 
 
   const changeAdmin = (person) => {
     const docRef = doc(db, "users", person.id)

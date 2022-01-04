@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // Layouts
 import Landing from '../layouts/Landing.vue'
 import LoggedIn from '../layouts/LoggedIn.vue'
-import Simulation from '../layouts/Simulation.vue'
+import Simulations from '../layouts/Simulation.vue'
 
 // Pages views
 import Home from '../views/Home.vue'
@@ -12,7 +12,7 @@ import Register from '../views/Register.vue'
 import Player from '../views/Player.vue'
 import Facilitator from '../views/Facilitator.vue'
 import Administrator from "../views/Administrator.vue"
-import Authenticated from '../views/Authenticated.vue'
+import Simulation from '../views/Simulation.vue'
 
 // Test vies
 import Test from '../views/Test.vue'
@@ -91,18 +91,12 @@ const routes = [
     ] 
   },
   {
-    path: '/simulation',
+    path: '/simulation/:id',
     name: 'Simulation',
     component: Simulation,
-    beforeEnter: requireAuth,
-    children: [
-      {
-        path: '',
-        name: 'Authenticated',
-        component: Authenticated
-      }
-      
-    ]
+    props: true,
+    beforeEnter: requireAuth
+    
   },
 
   /*{
