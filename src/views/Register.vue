@@ -85,6 +85,7 @@ import { LockClosedIcon } from '@heroicons/vue/solid'
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 import useSignup from "@/composables/useSignup";
+import { useStore } from 'vuex'
 
 // firebase imports
 import { auth } from '../firebase/config'
@@ -101,38 +102,29 @@ export default {
     const password = ref("");
     const name = ref("")
 
+    const store = useStore()
+
     const { signup, error } = useSignup();
     const router = useRouter();
 
     const registerUser = async () => {
-      console.log(email.value, password.value);
-      await signup(email.value, password.value, name.value);
 
-// Update the name of the person      
-  /*    updateProfile(auth.currentUser, {
-        displayName: name.value /*, photoURL: "https://example.com/jane-q-user/profile.jpg" 
-        
-      }).then(() => {
-        // Profile updated!
-        // Add details to user collection
-        const colRef = collection(db, "users");
+      try { 
+        console.log(email.value, password.value);
+        await signup(email.value, password.value, name.value);
 
-        addDoc(colRef, {
-        id: auth.currentUser.uid,
-        name: name.value,
-        email:email.value
-        
-      });
-        
-      }).catch((error) => {
-        // An error occurred
-        // ...
-      });
-*/
-      if (!error.value) {
+        setTimeout(() => {router.push("/loggedin")}, 1000)
+
+      } catch (err) {
+        console.log (err.message)
+      }
+      
+
+
+   /*   if (!error.value) {
         setTimeout(() => {router.push("/loggedin")}, 1000)
         
-      }
+      } */
     }
     return {
       email,

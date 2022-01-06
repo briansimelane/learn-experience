@@ -29,7 +29,7 @@ const signup = async (email, password, displayName) => {
             email: email,
             facilitator: false,
             administrator: false,
-            lastSignIn: auth.currentUser.metadata.lastSignInTime
+            lastSignIn: auth.currentUser.metadata.lastSignInTime.toLocaleString() 
             })
 
         //reset error and pending

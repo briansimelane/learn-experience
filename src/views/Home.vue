@@ -98,8 +98,7 @@ import getUser from '@/composables/getUser'
 const navigation = [
   { name: 'Players', href: '/loggedin' },
   { name: 'Facilitators', href: '/facilitator' },
-  { name: 'Administrators', href: '/administrator' },
-  { name: 'Simulations', href: '/simulation' },
+  { name: 'Administrators', href: '/administrator' }
 ]
 
 export default {

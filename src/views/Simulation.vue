@@ -22,6 +22,11 @@
           <p>{{ currentSimulation.cohortName }}</p>
           
         </div>
+
+
+        <div>
+          <SimulationHome />
+        </div>
         <!-- /End replace -->
       </div>
     </main>
@@ -37,14 +42,17 @@ import getUser from '@/composables/getUser'
 import PlayerNav from '@/components/navBars/PlayerNav'
 import { ref } from 'vue'
 
+// imports: simulation components
+import SimulationHome from '@/views/simulation/home.vue'
+
 // firebase imports
 import { db } from "../firebase/config"
-import { getDoc, doc, onSnapshot } from "firebase/firestore"
+import { doc, onSnapshot } from "firebase/firestore"
 
 
 export default {
   components: {
-    PlayerNav
+    PlayerNav, SimulationHome
   },
   props: ['id'],
   setup(props) {

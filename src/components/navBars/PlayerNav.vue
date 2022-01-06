@@ -136,7 +136,7 @@ const router = useRouter();
 
 const Logout = () => {
     signOut(auth)
-    router.push("/")
+    //router.push("/")
 
 }
 

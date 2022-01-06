@@ -3,7 +3,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // Layouts
 import Landing from '../layouts/Landing.vue'
 import LoggedIn from '../layouts/LoggedIn.vue'
-import Simulations from '../layouts/Simulation.vue'
+//import Simulations from '../layouts/Simulation.vue'
 
 // Pages views
 import Home from '../views/Home.vue'
