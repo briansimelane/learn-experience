@@ -110,7 +110,7 @@ import {signOut } from 'firebase/auth'
 
 const navigation = [
   { name: 'Home', to: '/', current: true },
-  { name: 'Players', to: '/loggedin', current: false },
+  { name: 'Play', to: '/loggedin', current: false },
   { name: 'Facilitators', to: '/facilitator', current: false },
   { name: 'Administrators', to: '/administrator', current: false },
 ]

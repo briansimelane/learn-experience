@@ -2,7 +2,7 @@
 <template>
   <Listbox as="div" v-model="selected">
     <ListboxLabel class="block text-sm font-semibold text-gray-700">
-     <slot name="inputLabel">Input 1 - 10</slot> 
+      <slot name="inputLabel">Pmt terms</slot> 
     </ListboxLabel>
     <div class="mt-1 relative">
       <ListboxButton class="bg-blue-100 relative w-full  border border-gray-300 rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
@@ -37,16 +37,13 @@ import { Listbox, ListboxButton, ListboxLabel, ListboxOption, ListboxOptions } f
 import { CheckIcon, SelectorIcon } from '@heroicons/vue/solid'
 
 const listOptions = [
-  { id: 1, name: '1' },
-  { id: 2, name: '2' },
-  { id: 3, name: '3' },
-  { id: 4, name: '4' },
-  { id: 5, name: '5' },
-  { id: 6, name: '6' },
-  { id: 7, name: '7' },
-  { id: 8, name: '8' },
-  { id: 9, name: '9' },
-  { id: 10, name: '10' },
+  { id: 1, name: '0' },
+  { id: 2, name: '15' },
+  { id: 3, name: '30' },
+  { id: 4, name: '45' },
+  { id: 5, name: '60' },
+  { id: 6, name: '90' },
+  { id: 7, name: '120' }
 ]
 
 export default {
