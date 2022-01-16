@@ -357,7 +357,10 @@ const numTeams = ref(teams[0])
      simName: currentSimData.value.SimulationIdentifiers.simName,
      SimulationIdentifiers: currentSimData.value.SimulationIdentifiers,
      Names: currentSimData.value.Names,
-     DefaultDecisions: currentSimData.value.DefaultDecisions
+     DefaultDecisions: currentSimData.value.DefaultDecisions,
+     StartingValues: currentSimData.value.StartingValues,
+     Model: currentSimData.value.Model,
+     Financials: currentSimData.value.Financials
    })
 
 
