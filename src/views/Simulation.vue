@@ -23,6 +23,19 @@
           
         </div>
 
+        <div class="px-4 py-1 sm:px-0">
+
+          Test Data from JSON <br>
+           Last updated: {{ currentSimulation.SimulationIdentifiers.lastUpdate }} <br>
+          <p>Sim Name: {{ currentSimulation.SimulationIdentifiers.simName }}</p>
+          <p>Product names: {{ currentSimulation.Names.Products[0]}} | {{ currentSimulation.Names.Products[1]}} | {{ currentSimulation.Names.Products[2]}}</p>
+
+
+          
+          <p v-for="product in currentSimulation.Names.Products" :key="product">{{ product }}</p>
+           
+        </div>
+
 
         <div>
           <SimulationHome />

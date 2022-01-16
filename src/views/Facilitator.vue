@@ -108,6 +108,8 @@
           </button>
         </div>
       </form>
+
+      
     </div>
   </div>
 
@@ -245,6 +247,7 @@ export default {
   const currentSimulationSelected = ref('')
   const confirmationModalHeader = ref('')
   const confirmationModalBody = ref('')
+  const testFromJson = ref('')
 
   const modalActive = ref(false)
   // function to toggle modal
@@ -341,7 +344,7 @@ const numTeams = ref(teams[0])
     const data = await res.json()
     // Assign JSON game file to variables
     currentSimData.value = data.baseData
-    
+   
 
   // write to firestore
    await addDoc(colRef, {
@@ -351,8 +354,12 @@ const numTeams = ref(teams[0])
      cohortName: cohortName.value,
      dateCreated: dateCreated,
      numTeams: numTeams.value.name,
-     simName: currentSimData.value.simName
+     simName: currentSimData.value.SimulationIdentifiers.simName,
+     SimulationIdentifiers: currentSimData.value.SimulationIdentifiers,
+     Names: currentSimData.value.Names,
+     DefaultDecisions: currentSimData.value.DefaultDecisions
    })
+
 
 
 //updated and open confirmation modal

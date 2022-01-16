@@ -1,32 +1,23 @@
 <template>
-  <Modal :modalActive="modalActive">
-    This is from the test 2 page
-  </Modal>
-
-  This is Test Page 2
-
+  <div class="container mx-auto">
+    <currency-input v-model="value"  />
+  </div>
 </template>
 
 <script>
-import Modal from '@/components/modal.vue'
-import { ref } from 'vue'
-
+// import TestComp from '@/components/testComponent'
+import CurrencyInput from '@/components/testComponent'
 export default {
-  components: { Modal },
-  setup() {
-    const modalActive = ref(false)
+  components: {
+    CurrencyInput
+  },
+  data: () => ({ value: 1234 })
 
-    return {
-      modalActive
-    }
-  }
 
+/* :options="{ currency: 'ZAR' }" */
 }
 </script>
 
 <style>
 
 </style>
-
-
- 

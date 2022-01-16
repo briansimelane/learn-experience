@@ -1,8 +1,199 @@
 {
     "baseData": {
-        "simName": "TechTabs Limited",
-        "maxTeams": 10,
-        "maxRounds": 5
+        "SimulationIdentifiers": {
+            "simName": "TechTabs Limited",
+            "maxTeams": 10,
+            "maxRounds": 4,
+            "version": 2.8,
+            "lastUpdate": "16 January 2021",
+            "currentYear": 1
+        },
+        "Names": {
+            "Products": ["TechBook", "Zroid", "iTab"],
+            "Distribution": ["Company Stores", "Agents"],
+            "Suppliers": ["Alpha", "Neepo", "Zen", "Cheng"],
+            "ProductionStaff": ["Engineers", "Technicians", "Semi-Skilled"],
+            "AdminStaff": ["Admin & Sales", "Customer Service"]
+        },
+        "DefaultDecisions": {
+            "CoName": "TechTabs Limited",
+            "CEOName": "CEO's name",
+            "ProductMarketShare": [20, 20, 20],
+            "ProductPrices": [3000, 4800, 6500],
+            "Advertising": 25061883,
+            "AdvertisingProd": [25, 25, 25],
+            "AdvertisingGeneral": 25,
+            "Stores": 0,
+            "Agents": 1.5,
+            "Production": [15000, 15000, 10000],
+            "Purchases": [12000, 28000, 15000],
+            "Capex": 0,
+            "Research": 24077047,
+            "ResearchAllocation": [25, 25, 50],
+            "ProcurementComponents": [0, 0, 20000, 20000],
+            "ProcurementFG": [0, 0, 15000, 40000],
+            "SupplierPerformance": {
+                "Quality": [10, 5, 6, 7],
+                "LeadTime": [3, 10, 5, 6],
+                "AfterSales": [8, 5, 10, 5],
+                "Capacity": [4, 10, 6, 6],
+                "Innovation": [8, 5, 7, 6],
+                "Terms": [60, 30, 45, 45]
+            },
+            "SupplierPricesComponents": {
+                "Prod1": [1560, 1380, 1200, 1160],
+                "Prod2": [1328, 1328, 1328, 1328],
+                "Prod3": [1065, 1065, 1065, 1065]
+            },
+            "SupplierPricesFG": {
+                "Prod1": [1660, 1480, 1300, 1260],
+                "Prod2": [1750, 1560, 1860, 1860],
+                "Prod3": [1700, 1600, 1800, 1850]
+            },
+            "Recruitment": {
+                "ProductionStaff": [-2, 1, 1],
+                "AdminStaff": [1, 1]
+            },
+            "Salaries": {
+                "ProductionStaff": [55000, 38000, 30000],
+                "AdminStaff": [20000, 9250]
+            },
+            "TrainingLevels": {
+                "ProductionStaff": ["Basic", "Basic", "Basic"],
+                "AdminStaff": ["Basic", "Basic"]
+            },
+            "PaymentTerms": [],
+            "LTdebt": 0,
+            "Equity": 0            
+        },
+        "StartingValues": {
+            "Prices": [3000, 4800, 6500],
+            "Stores": 8,
+            "OpeningInventory": [9293, 8216, 0],
+            "Capacity": 40000,
+            "Features": [0, 0, 0],
+            "ProductionStaff": [22, 28, 37],
+            "AdminStaff": [29, 58],
+            "LTdebt": 0,
+            "Equity": 222986333,
+            "CSAT": 70,
+            "ESAT": 70
+        },
+        "Model": {
+            "Demand": {
+                "Prod1": [288750, 187588, 107031, 164150, 173179],
+                "Prod2": [179888, 260242, 287930, 326344, 350820], 
+                "Prod3": [89750, 127559, 196907, 230299, 254481]
+            },
+            "PaymentFactors": {
+                "Prod1": {
+                    "0": [100, 100, 100, 100, 100],
+                    "15": [90, 90, 90, 90, 90],
+                    "30": [85, 85, 85, 85, 85],
+                    "45": [75, 75, 75, 75, 75],
+                    "60": [50, 50, 50, 50, 50],
+                    "90": [33.3, 33.3, 33.3, 33.3, 33.3],
+                    "120": [25, 25, 25, 25, 25]
+                },
+                "Prod2": {
+                    "0": [100, 100, 100, 100, 100],
+                    "15": [95, 90, 90, 90, 90],
+                    "30": [85, 85, 85, 85, 85],
+                    "45": [75, 75, 75, 75, 75],
+                    "60": [50, 50, 50, 50, 50],
+                    "90": [33.3, 33.3, 33.3, 33.3, 33.3],
+                    "120": [25, 25, 25, 25, 25]
+                },
+                "Prod3": {
+                    "0": [100, 100, 100, 100, 100],
+                    "15": [97, 90, 90, 90, 90],
+                    "30": [87, 85, 85, 85, 85],
+                    "45": [79, 75, 75, 75, 75],
+                    "60": [68, 50, 50, 50, 50],
+                    "90": [45, 33.3, 33.3, 33.3, 33.3],
+                    "120": [33.3, 25, 25, 25, 25]
+                }
+            },
+            "StoreCosts": {
+                "Setup": [8900000, 8900000, 9353900, 9830949, 10332327],
+                "Close": [2320000, 2320000, 2438320, 268152, 2950367],
+                "Running": [5341584, 5341584, 5614005, 6001371, 6415466]
+            },
+            "ProductionCosts": [720, 720, 720, 720, 720],
+            "CAPEX": [750, 750, 750, 750, 750],
+            "FeatureCost": [2350000, 3050000, 3355000, 3690500, 4059550],
+            "TrainingCost": {
+                "None": [0, 0, 0, 0, 0],
+                "Basic": [9600, 9600, 9600, 9600, 9600],
+                "Moderate": [32000, 32000, 32000, 32000, 32000],
+                "Advanced": [48000, 48000, 48000, 48000, 48000]
+            },
+            "UnitsPerEmployee": {
+                "Engineers": [3240, 3240, 3240, 3240, 3240],
+                "Technicians": [2423, 2423, 2423, 2423, 2423],
+                "SemiSkilled": [1870, 1870, 1870, 1870, 1870],
+                "Admin": [1840, 1840, 1840, 1840, 1840],
+                "CService": [570, 570, 570, 570, 570]
+            },
+            "InterestRate": [6.5, 6.5, 6.5, 6.5, 6.5],
+            "TaxRate": [28, 28, 28, 28, 28],
+            "CostOfEquity": [13.2, 13.2, 13.2, 13.2, 13.2],
+            "Depreciation": [0.5, 0.5, 0.5, 0.5, 0.5],
+            "ChannelDistribution": {
+                "Stores": {
+                    "Prod1": [78, 78, 78, 78, 78],
+                    "Prod2": [35, 35, 35, 35, 35],
+                    "Prod3": [45, 45, 45, 45, 45]
+                },
+                "Agents": {
+                    "Prod1": [22, 22, 22, 22, 22],
+                    "Prod2": [65, 65, 65, 65, 65],
+                    "Prod3": [55, 55, 55, 55, 55]
+                }
+            },
+            "CustomerBuyingCriteria": {
+                "Prod1": {
+                    "Price": [10, 10, 10, 10, 10],
+                    "Terms": [9, 9, 9, 9, 9],
+                    "Availability": [7, 7, 7, 7, 7],
+                    "Stores": [8, 8, 8, 8, 8],
+                    "Agents": [4, 4, 4, 4, 4],
+                    "StaffAvailability": [3, 3, 3, 3, 3],
+                    "Innovation": [2, 2, 2, 2, 2],
+                    "CoAdevertising": [6, 6, 6, 6, 6],
+                    "ProdAdvertising": [5, 5, 5, 5, 5],
+                    "Other": [0, 0, 0, 0, 0]
+                },
+                "Prod2": {
+                    "Price": [5, 5, 5, 5, 5],
+                    "Terms": [3, 3, 3, 3, 3],
+                    "Availability": [6, 6, 6, 6, 6],
+                    "Stores": [2, 2, 2, 2, 2],
+                    "Agents": [7, 7, 7, 7, 7],
+                    "StaffAvailability": [4, 4, 4, 4, 4],
+                    "Innovation": [8, 8, 8, 8, 8],
+                    "CoAdevertising": [9, 9, 9, 9, 9],
+                    "ProdAdvertising": [10, 10, 10, 10, 10],
+                    "Other": [0, 0, 0, 0, 0]
+                }, 
+                "Prod3": {
+                    "Price": [3, 3, 3, 3, 3],
+                    "Terms": [2, 2, 2, 2, 2],
+                    "Availability": [9, 9, 9, 9, 9],
+                    "Stores": [5, 5, 5, 5, 5],
+                    "Agents": [6, 6, 6, 6, 6],
+                    "StaffAvailability": [8, 8, 8, 8, 8],
+                    "Innovation": [10, 10, 10, 10, 10],
+                    "CoAdevertising": [4, 4, 4, 4, 4],
+                    "ProdAdvertising": [7, 7, 7, 7, 7],
+                    "Other": [0, 0, 0, 0, 0]
+                }
+            }
+        },
+        "Financials": {
+
+        }
+        
     }
     
 }

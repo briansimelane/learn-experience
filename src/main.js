@@ -4,6 +4,8 @@ import router from './router'
 import store from './store'
 import './assets/tailwind.css'
 
+
+
 // firebase imports
 import { auth } from './firebase/config'
 import { onAuthStateChanged } from 'firebase/auth'
@@ -13,7 +15,10 @@ let app
 
 onAuthStateChanged(auth, () => {
     if(!app){
-        app = createApp(App).use(store).use(router).mount('#app')
+        app = createApp(App)
+            .use(store)
+            .use(router)
+            .mount('#app')
     }
 })
 
