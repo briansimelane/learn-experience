@@ -171,7 +171,7 @@
                 </td>
 
                 <td class="px-6 py-4 whitespace-nowrap">
-                  <div class="text-sm text-gray-900">{{ simulation.numTeams }}</div>
+                  <div class="text-sm text-gray-900">{{ simulation.teams }}</div>
                   
                 </td>
 
@@ -350,10 +350,12 @@ const numTeams = ref(teams[0])
    await addDoc(colRef, {
      facilitatorID: user.value.uid,
      facilitatorName: user.value.displayName,
+     players: [],
      client: clientName.value,
      cohortName: cohortName.value,
      dateCreated: dateCreated,
-     numTeams: numTeams.value.name,
+     teams: numTeams.value.name,
+     numTeamsIndexMax: numTeams.value.id,
      simName: currentSimData.value.SimulationIdentifiers.simName,
      SimulationIdentifiers: currentSimData.value.SimulationIdentifiers,
      Names: currentSimData.value.Names,

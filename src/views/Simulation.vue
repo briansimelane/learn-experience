@@ -48,7 +48,6 @@
 
 <script>
 // imports: composables
-import getCollection from "@/composables/getCollection"
 import getUser from '@/composables/getUser'
 
 // imports: components and tools
