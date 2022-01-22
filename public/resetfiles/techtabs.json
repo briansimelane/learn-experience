@@ -62,7 +62,7 @@
                 "ProductionStaff": ["Basic", "Basic", "Basic"],
                 "AdminStaff": ["Basic", "Basic"]
             },
-            "PaymentTerms": [],
+            "PaymentTerms": [0, 0, 0],
             "LTdebt": 0,
             "Equity": 0            
         },
@@ -191,6 +191,604 @@
             }
         },
         "Financials": {
+
+        },
+        "Decisions": {
+            "Team1": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": {
+                    "Prod1": 20,
+                    "Prod2": 20,
+                    "Prod3": 20,
+                    "Prod4": 0,
+                    "Prod5": 0,
+                    "Prod6": 0    
+                },
+                "ProductPrices":
+                    {
+                    "Prod1": 3000,
+                    "Prod2": 4800,
+                    "Prod3": 6500,
+                    "Prod4": 0,
+                    "Prod5": 0,
+                    "Prod6": 0
+                    },
+                "Advertising": 25061883,
+                "AdvertisingProd": 
+                    {
+                    "Prod1": 25,
+                    "Prod2": 25,
+                    "Prod3": 25,
+                    "Prod4": 0,
+                    "Prod5": 0,
+                    "Prod6": 0
+                    },
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": 
+                {
+                    "Prod1": 15000,
+                    "Prod2": 15000,
+                    "Prod3": 10000,
+                    "Prod4": 0,
+                    "Prod5": 0,
+                    "Prod6": 0  
+                },
+                "Purchases": 
+                {
+                    "Prod1": 12000,
+                    "Prod2": 28000,
+                    "Prod3": 15000,
+                    "Prod4": 0,
+                    "Prod5": 0,
+                    "Prod6": 0 
+                },
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": 
+                {
+                    "Prod1": 25,
+                    "Prod2": 25,
+                    "Prod3": 50,
+                    "Prod4": 0,
+                    "Prod5": 0,
+                    "Prod6": 0 
+                },
+                "ProcurementComponents": 
+                {
+                    "Supplier1": 0,
+                    "Supplier2": 0,
+                    "Supplier3": 20000,
+                    "Supplier4": 20000
+                },
+                "ProcurementFG": 
+                {
+                    "Supplier1": 0,
+                    "Supplier2": 0,
+                    "Supplier3": 15000,
+                    "Supplier4": 40000
+                },
+                "SupplierPerformance": {
+                    "Quality": 
+                    {
+                        "Supplier1": 10,
+                        "Supplier2": 5,
+                        "Supplier3": 6,
+                        "Supplier4": 7 
+                    },
+                    "LeadTime":
+                    {
+                        "Supplier1": 3,
+                        "Supplier2": 10,
+                        "Supplier3": 5,
+                        "Supplier4": 6 
+                    },
+                    "AfterSales":
+                    {
+                        "Supplier1": 8,
+                        "Supplier2": 5,
+                        "Supplier3": 10,
+                        "Supplier4": 5 
+                    },
+                    "Capacity":
+                    {
+                        "Supplier1": 4,
+                        "Supplier2": 10,
+                        "Supplier3": 6,
+                        "Supplier4": 6 
+                    },
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team2": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team3": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team4": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team5": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team6": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team7": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team8": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team9": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            },
+            "Team10": {
+                "CoName": "TechTabs Limited",
+                "CEOName": "CEO's name",
+                "ProductMarketShare": [20, 20, 20],
+                "ProductPrices": [3000, 4800, 6500],
+                "Advertising": 25061883,
+                "AdvertisingProd": [25, 25, 25],
+                "AdvertisingGeneral": 25,
+                "Stores": 0,
+                "Agents": 1.5,
+                "Production": [15000, 15000, 10000],
+                "Purchases": [12000, 28000, 15000],
+                "Capex": 0,
+                "Research": 24077047,
+                "ResearchAllocation": [25, 25, 50],
+                "ProcurementComponents": [0, 0, 20000, 20000],
+                "ProcurementFG": [0, 0, 15000, 40000],
+                "SupplierPerformance": {
+                    "Quality": [10, 5, 6, 7],
+                    "LeadTime": [3, 10, 5, 6],
+                    "AfterSales": [8, 5, 10, 5],
+                    "Capacity": [4, 10, 6, 6],
+                    "Innovation": [8, 5, 7, 6],
+                    "Terms": [60, 30, 45, 45]
+                },
+                "SupplierPricesComponents": {
+                    "Prod1": [1560, 1380, 1200, 1160],
+                    "Prod2": [1328, 1328, 1328, 1328],
+                    "Prod3": [1065, 1065, 1065, 1065]
+                },
+                "SupplierPricesFG": {
+                    "Prod1": [1660, 1480, 1300, 1260],
+                    "Prod2": [1750, 1560, 1860, 1860],
+                    "Prod3": [1700, 1600, 1800, 1850]
+                },
+                "Recruitment": {
+                    "ProductionStaff": [-2, 1, 1],
+                    "AdminStaff": [1, 1]
+                },
+                "Salaries": {
+                    "ProductionStaff": [55000, 38000, 30000],
+                    "AdminStaff": [20000, 9250]
+                },
+                "TrainingLevels": {
+                    "ProductionStaff": ["Basic", "Basic", "Basic"],
+                    "AdminStaff": ["Basic", "Basic"]
+                },
+                "PaymentTerms": [0, 0, 0],
+                "LTdebt": 0,
+                "Equity": 0            
+            }
+        },
+        "TeamResults": {
 
         }
         

@@ -91,7 +91,7 @@ const routes = [
     ] 
   },
   {
-    path: '/simulation/:id',
+    path: '/simulation/:id&teamIndex',
     name: 'Simulation',
     component: Simulation,
     props: true,

@@ -362,7 +362,9 @@ const numTeams = ref(teams[0])
      DefaultDecisions: currentSimData.value.DefaultDecisions,
      StartingValues: currentSimData.value.StartingValues,
      Model: currentSimData.value.Model,
-     Financials: currentSimData.value.Financials
+     Financials: currentSimData.value.Financials,
+     Decisions: currentSimData.value.Decisions,
+     TeamResults: currentSimData.value.TeamResults
    })
 
 
